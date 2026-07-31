@@ -1,0 +1,104 @@
+.pageContainer {
+    display: flex;
+    min-height: 100vh;
+}
+
+.main {
+    flex: 1;
+    padding: 2rem;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.heading {
+    font-size: 1.75rem;
+    color: #032b41;
+    margin-bottom: 0.25rem;
+}
+
+.subheading {
+    color: #666;
+    margin-bottom: 2rem;
+}
+
+.plans {
+    display: flex;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.planCard {
+    flex: 1;
+    position: relative;
+    padding: 1.5rem;
+    border: 2px solid #e1e7ea;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: border-color 0.2s;
+}
+
+.planCard:hover {
+    border-color: #2bd97c;
+}
+
+.planCard.active {
+    border-color: #2bd97c;
+    background: #f0fdf6;
+}
+
+.badge {
+    position: absolute;
+    top: -12px;
+    right: 12px;
+    background: #2bd97c;
+    color: #032b41;
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 3px 10px;
+    border-radius: 12px;
+}
+
+.planName {
+    font-size: 1.1rem;
+    color: #032b41;
+    margin-bottom: 0.5rem;
+}
+
+.price {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: #032b41;
+}
+
+.period {
+    font-size: 0.9rem;
+    font-weight: 400;
+    color: #666;
+}
+
+.detail {
+    font-size: 0.85rem;
+    color: #666;
+    margin-top: 0.5rem;
+}
+
+.checkoutBtn {
+    width: 100%;
+    padding: 0.85rem;
+    background: #2bd97c;
+    color: #032b41;
+    border: none;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.checkoutBtn:hover {
+    background: #24c46d;
+}
+
+.checkoutBtn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}

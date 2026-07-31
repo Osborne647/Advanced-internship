@@ -7,6 +7,7 @@ import { useAuth } from "@/hooks/useAuth"
 import Sidebar from "@/components/Sidebar"
 import BookCard from "@/components/BookCard"
 import styles from "./page.module.css"
+import BookCardSkeleton from "@/components/BookCardSkeleton"
 
 export default function LibraryPage() {
     const { user } = useAuth()
@@ -20,13 +21,14 @@ export default function LibraryPage() {
             return
         }
 
-        const fetchLibrary = async () => {
-            const snapshot = await getDocs(collection(db, "users", user.uid, "library"))
-            const allBooks = snapshot.docs.map((doc) => doc.data())
-            setSavedBooks(allBooks.filter((book) => !book.finished))
-            setFinishedBooks(allBooks.filter((book) => book.finished))
-            setLoading(false)
-        }
+      const fetchLibrary = async () => {
+    await new Promise((resolve) => setTimeout(resolve, 1500))
+    const snapshot = await getDocs(collection(db, "users", user.uid, "library"))
+    const allBooks = snapshot.docs.map((doc) => doc.data())
+    setSavedBooks(allBooks.filter((book) => !book.finished))
+    setFinishedBooks(allBooks.filter((book) => book.finished))
+    setLoading(false)
+}
 
         fetchLibrary()
     }, [user])
@@ -38,7 +40,24 @@ export default function LibraryPage() {
                 <h1 className={styles.heading}>My Library</h1>
 
                 {loading ? (
-                    <p className={styles.message}>Loading...</p>
+                    <>
+                        <section className={styles.section}>
+                            <h2 className={styles.sectionTitle}>Saved Books</h2>
+                            <div className={styles.grid}>
+                                {Array.from({ length: 4 }).map((_, i) => (
+                                    <BookCardSkeleton key={i} />
+                                ))}
+                            </div>
+                        </section>
+                        <section className={styles.section}>
+                            <h2 className={styles.sectionTitle}>Finished</h2>
+                            <div className={styles.grid}>
+                                {Array.from({ length: 4 }).map((_, i) => (
+                                    <BookCardSkeleton key={i} />
+                                ))}
+                            </div>
+                        </section>
+                    </>
                 ) : !user ? (
                     <p className={styles.message}>Please log in to see your library.</p>
                 ) : (
@@ -46,7 +65,10 @@ export default function LibraryPage() {
                         <section className={styles.section}>
                             <h2 className={styles.sectionTitle}>Saved Books</h2>
                             {savedBooks.length === 0 ? (
-                                <p className={styles.message}>No saved books yet. Add some from the book page!</p>
+                                <div className={styles.message}>
+                                    <p style={{ fontSize: "1.25rem", fontWeight: 700, marginBottom: "0.25rem" }}>No saved books yet.</p>
+                                    <p>Add some from the book page!</p>
+                                </div>
                             ) : (
                                 <div className={styles.grid}>
                                     {savedBooks.map((book) => (

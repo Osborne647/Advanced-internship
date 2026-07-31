@@ -12,6 +12,8 @@ import {
 } from "firebase/auth"
 import { useState, useEffect } from "react"
 import { useRouter } from "next/navigation"
+import { doc, getDoc } from "firebase/firestore"
+import { db } from "@/firebase/config"
 
 export function useAuth() {
     const router = useRouter()
@@ -27,11 +29,21 @@ export function useAuth() {
     }
 
      useEffect(() => {
-        const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
-            setUser(currentUser)
-        })
-        return () => unsubscribe()
-    }, [])
+    const unsubscribe = onAuthStateChanged(auth, async (currentUser) => {
+        if (currentUser) {
+            const userDoc = await getDoc(doc(db, "users", currentUser.uid))
+            const userData = userDoc.exists() ? userDoc.data() : {}
+            setUser({
+                ...currentUser,
+                subscribed: userData.subscribed || false,
+                plan: userData.plan || null,
+            })
+        } else {
+            setUser(null)
+        }
+    })
+    return () => unsubscribe()
+}, [])
 
     const loginAsGuest = async () => {
         try {

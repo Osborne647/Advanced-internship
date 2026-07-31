@@ -2,12 +2,15 @@
     position: relative;
     padding: 0 1.25rem;
     margin-bottom: 1rem;
+    max-width: 400px;
+    display: flex;
+    gap: 0.5rem;
 }
 
 .searchInput {
-    width: 100%;
+    flex: 1;
     padding: 0.5rem 0.75rem;
-    border: 1px solid #e1e7ea;
+    border: 2px solid #032b41;
     border-radius: 4px;
     font-size: 0.85rem;
     outline: none;
@@ -21,6 +24,21 @@
 
 .searchInput:focus {
     border-color: #2bd97c;
+}
+
+.searchBtn {
+    padding: 0.5rem 1rem;
+    background: #2bd97c;
+    color: #032b41;
+    border: none;
+    border-radius: 4px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.searchBtn:hover {
+    background: #24c46d;
 }
 
 .dropdown {

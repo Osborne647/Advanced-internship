@@ -28,7 +28,7 @@
   margin-bottom: 1.5rem;
 }
 
-.navItem {
+.navItem, .navItem2 {
   display: flex;
   align-items: center;
   gap: 0.5rem;
@@ -42,4 +42,8 @@
 
 .navItem:hover {
   background: #e8f0ee;
+}
+
+.navItem2 {
+  cursor: not-allowed;
 }

@@ -2,6 +2,7 @@ import styles from "./page.module.css"
 import Sidebar from "@/components/Sidebar"
 import BookCard from "@/components/BookCard"
 import Link from "next/link"
+import SearchBar from "@/components/SearchBar"
 
 async function getBooks(status) {
     const res = await fetch(
@@ -10,6 +11,7 @@ async function getBooks(status) {
     if (!res.ok) throw new Error(`Failed to fetch ${status} books`)
     const text = await res.text()
     if (!text) return []
+    await new Promise((resolve) => setTimeout(resolve, 800))
     return JSON.parse(text)
 }
 
@@ -25,6 +27,7 @@ export default async function ForYouPage() {
             <Sidebar />
             <main className={styles.main}>
                 <section className={styles.section}>
+                    <SearchBar />
     <h2 className={styles.sectionTitle}>Selected just for you</h2>
     {selected.length > 0 && (
         <Link href={`/book/${selected[0].id}`} className={styles.featured}>
