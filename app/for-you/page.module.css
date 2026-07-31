@@ -1,0 +1,96 @@
+.pageContainer {
+    display: flex;
+    min-height: 100vh;
+}
+
+.main {
+    flex: 1;
+    padding: 2rem 2.5rem;
+    overflow-y: auto;
+}
+
+.section {
+    margin-bottom: 2.5rem;
+}
+
+.sectionTitle {
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin: 0 0 0.25rem;
+    color: #032b41;
+}
+
+.sectionSub {
+    font-size: 0.9rem;
+    color: #666;
+    margin: 0 0 1rem;
+}
+
+.featured {
+    background: #fbefd6;
+    border-radius: 8px;
+    padding: 1.5rem;
+    max-width: 600px;
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+
+.featuredContent {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.featuredSub {
+    font-size: 0.95rem;
+    color: #333;
+    margin: 0;
+}
+
+.featured:hover {
+    opacity: 0.9;
+}
+
+.divider {
+    border: none;
+    border-top: 1px solid #ddd;
+}
+
+.featuredMeta {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.featuredImg {
+    width: 60px;
+    border-radius: 4px;
+}
+
+.featuredMeta h3 {
+    margin: 0;
+    font-size: 1rem;
+    color: #032b41;
+}
+
+.featuredMeta p {
+    margin: 0.25rem 0 0;
+    font-size: 0.85rem;
+    color: #555;
+}
+
+.featuredDuration {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.85rem;
+    color: #333;
+}
+
+.bookRow {
+    display: flex;
+    gap: 1rem;
+    overflow-x: auto;
+    padding-bottom: 0.5rem;
+}

@@ -1,0 +1,73 @@
+.searchWrapper {
+    position: relative;
+    padding: 0 1.25rem;
+    margin-bottom: 1rem;
+}
+
+.searchInput {
+    width: 100%;
+    padding: 0.5rem 0.75rem;
+    border: 1px solid #e1e7ea;
+    border-radius: 4px;
+    font-size: 0.85rem;
+    outline: none;
+    background: #fff;
+    color: #333;
+}
+
+.searchInput::placeholder {
+    color: #999;
+}
+
+.searchInput:focus {
+    border-color: #2bd97c;
+}
+
+.dropdown {
+    position: absolute;
+    top: 100%;
+    left: 1.25rem;
+    right: 1.25rem;
+    background: #fff;
+    border: 1px solid #e1e7ea;
+    border-radius: 4px;
+    list-style: none;
+    margin: 0.25rem 0 0;
+    padding: 0;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    z-index: 100;
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+.dropdownItem {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.6rem 0.75rem;
+    cursor: pointer;
+}
+
+.dropdownItem:hover {
+    background: #f5f5f5;
+}
+
+.thumb {
+    width: 36px;
+    height: 54px;
+    object-fit: cover;
+    border-radius: 3px;
+}
+
+.bookTitle {
+    margin: 0;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #032b41;
+}
+
+.bookAuthor {
+    margin: 0.15rem 0 0;
+    font-size: 0.75rem;
+    color: #666;
+}

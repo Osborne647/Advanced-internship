@@ -1,0 +1,139 @@
+.pageContainer {
+    display: flex;
+    min-height: 100vh;
+}
+
+.playerPage {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 2rem;
+    min-height: 100vh;
+}
+
+.tabs {
+    display: flex;
+    gap: 0;
+    margin-bottom: 2rem;
+    border-bottom: 2px solid #eee;
+}
+
+.tab {
+    flex: 1;
+    padding: 0.75rem;
+    background: none;
+    border: none;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #999;
+    cursor: pointer;
+    border-bottom: 2px solid transparent;
+    margin-bottom: -2px;
+}
+
+.tab.active {
+    color: #2bd97c;
+    border-bottom-color: #2bd97c;
+}
+
+.bookMeta {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin: 0 0 0.25rem;
+    color: #032b41;
+}
+
+.author {
+    font-size: 0.95rem;
+    color: #555;
+    margin: 0;
+}
+
+.readContent {
+    padding: 1rem 0;
+}
+
+.textBody {
+    font-size: 0.95rem;
+    line-height: 1.8;
+    color: #394547;
+    white-space: pre-wrap;
+}
+
+.listenContent {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.coverArt {
+    width: 200px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.controls {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    width: 100%;
+    max-width: 400px;
+}
+
+.seekBar {
+    flex: 1;
+    cursor: pointer;
+    accent-color: #2bd97c;
+}
+
+.time {
+    font-size: 0.8rem;
+    color: #666;
+    min-width: 35px;
+}
+
+.playBtn {
+    padding: 0.75rem 2rem;
+    background: #2bd97c;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.playBtn:hover {
+    background: #20c46b;
+}
+
+.noAudio {
+    color: #999;
+    font-size: 0.9rem;
+}
+
+.finishedBtn {
+    margin-top: 2rem;
+    padding: 0.6rem 1.5rem;
+    background: #032b41;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.finishedBtn:hover {
+    background: #051f30;
+}
+
+.finishedBtn:disabled {
+    background: #999;
+    cursor: default;
+}

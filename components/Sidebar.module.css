@@ -1,0 +1,45 @@
+.pageContainer {
+  display: flex;
+  min-height: 100vh;
+}
+
+.sidebar {
+  width: 300px;
+  background: #f7faf9;
+  border-right: 1px solid #e1e7ea;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 1.5rem 0;
+  position: sticky;
+  top: 0;
+  height: 100vh;
+}
+
+.sidebarTop,
+.sidebarBottom {
+  display: flex;
+  flex-direction: column;
+}
+
+.logo {
+  width: 200px;
+  padding: 0 1.25rem;
+  margin-bottom: 1.5rem;
+}
+
+.navItem {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.25rem;
+  font-size: 0.9rem;
+  color: #394547;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.navItem:hover {
+  background: #e8f0ee;
+}

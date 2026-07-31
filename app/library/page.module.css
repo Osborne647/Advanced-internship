@@ -1,0 +1,39 @@
+.pageContainer {
+    display: flex;
+    min-height: 100vh;
+}
+
+.main {
+    flex: 1;
+    padding: 2rem 3rem;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.heading {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin: 0 0 1.5rem;
+}
+
+.message {
+    font-size: 0.95rem;
+    color: #666;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    gap: 1.5rem;
+}
+
+.section {
+    margin-bottom: 2.5rem;
+}
+
+.sectionTitle {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #032b41;
+    margin: 0 0 1rem;
+}

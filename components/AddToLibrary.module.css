@@ -1,0 +1,19 @@
+.addBtn {
+    background: none;
+    border: none;
+    color: #2bd97c;
+    font-size: 0.9rem;
+    font-weight: 500;
+    cursor: pointer;
+    padding: 0;
+}
+
+.addBtn:hover {
+    text-decoration: underline;
+}
+
+.addBtn:disabled {
+    color: #999;
+    cursor: default;
+    text-decoration: none;
+}
